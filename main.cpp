@@ -3,10 +3,14 @@
 #include <time.h>
 #include <unistd.h>
 
+int GameProcess1(int n, int buttom, int iFieldWidth, int iFieldHeight, char chLiveCell, char chDeadCell, bool *bCellArray, bool *bTempCellArray);
+int GameProcess2(int n, int buttom, int iFieldWidth, int iFieldHeight, char chLiveCell, char chDeadCell, bool *bCellArray, bool *bTempCellArray);
+int GameProcess3(int n, int buttom, int iFieldWidth, int iFieldHeight, char chLiveCell, char chDeadCell, bool *bCellArray, bool *bTempCellArray);
+
 using namespace std;
 int main()
 {
-
+	menu:
 	setlocale(LC_CTYPE, "Russian");
 	const int iFieldWidth(79), iFieldHeight(24);
 	const char chLiveCell = ('*'), chDeadCell(' ');
@@ -41,5 +45,33 @@ int main()
 	cout << "                                 Please, enter: "; cin >> buttom;
 	system("clear");
 
+	switch (buttom)
+	{
+		case 1:
+		{
+			GameProcess1( n, buttom, iFieldWidth, iFieldHeight, chLiveCell, chDeadCell, bCellArray, bTempCellArray);
+			goto menu;
+		}
+		case 2:
+		{
+			GameProcess2(n, buttom, iFieldWidth, iFieldHeight, chLiveCell, chDeadCell, bCellArray, bTempCellArray);
+			goto menu;
+		}
+		case 3:
+		{
+			GameProcess3(n, buttom, iFieldWidth, iFieldHeight, chLiveCell, chDeadCell, bCellArray, bTempCellArray);
+			goto menu;
+		}
+		case 4:
+		{
+			break;
+		}
+		default:
+			system("clear");
+			cout<<"Неверный пункт меню!\n";
+			cout<<"Введите любмую клавишу, чтобы выйти в меню\n";
+			system("Pause");
+			goto menu;
+	}
 	return 0;
 }
