@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <time.h>
 #include <unistd.h>
+#include "Game.h"
 
 int GameProcess1(int n, int buttom, int iFieldWidth, int iFieldHeight, char chLiveCell, char chDeadCell, bool *bCellArray, bool *bTempCellArray);
 int GameProcess2(int n, int buttom, int iFieldWidth, int iFieldHeight, char chLiveCell, char chDeadCell, bool *bCellArray, bool *bTempCellArray);
